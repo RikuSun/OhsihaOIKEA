@@ -1,0 +1,30 @@
+<html>
+    <head>
+
+        <script>
+            $.ajax({
+                url: "data.json"
+                cache:false
+            }).DONE(function(data){
+                console.log('Data luettu')
+                console.log(data)
+                $(function () {
+                    $('#heatmap').highcharts(
+                        chart: {
+                            type: 'heatmap',
+                            marginTop: 40,
+                            marginBottom: 80,
+                            plotBoarderWidth: 1
+                        },
+                        title:{
+                            text: 'Generoitua dataa'
+                        },
+                    })
+                })
+            })
+        </script>
+    </head>
+    <body>
+        <div id="heatmap"></div>
+    </body>
+</html>
